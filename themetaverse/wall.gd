@@ -6,9 +6,15 @@ extends Node3D
 
 @export var width = 10
 @export var height = 10
+@export var length = 20
 
+
+#References another scene
 @export var brickScene:PackedScene
 
+func _process(delta):
+	print(delta)
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
