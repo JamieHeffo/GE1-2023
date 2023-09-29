@@ -24,7 +24,7 @@ albedo_color = Color(0, 0, 1, 1)
 [node name="root" type="Node3D"]
 
 [node name="ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
 mesh = SubResource("PlaneMesh_n5np4")
