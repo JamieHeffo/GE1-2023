@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpjfgv6her2gu"]
+
+[ext_resource type="Script" path="res://node_3d.gd" id="1_hmp5p"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ik3vi"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_hmp5p")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2262, 0.784822, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ik3vi")

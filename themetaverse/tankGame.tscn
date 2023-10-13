@@ -1,54 +1,102 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsd26l7esfabd"]
+[gd_scene load_steps=26 format=3 uid="uid://bsd26l7esfabd"]
 
+[ext_resource type="Script" path="res://Start_XR.gd" id="1_8q0sy"]
+[ext_resource type="Script" path="res://FPController.gd" id="1_sbaxy"]
 [ext_resource type="Script" path="res://wall.gd" id="2"]
-[ext_resource type="Script" path="res://CamFollow.gd" id="2_lqmp0"]
+[ext_resource type="Environment" path="res://seek_environment..tres" id="2_jagpw"]
 [ext_resource type="PackedScene" uid="uid://bsmshwh5fdw1y" path="res://Box.tscn" id="4"]
+[ext_resource type="Script" path="res://TrailRender.gd" id="4_3h56a"]
 [ext_resource type="PackedScene" path="res://SceneSwitcher.tscn" id="5"]
+[ext_resource type="Material" path="res://trail1.tres" id="5_5qnui"]
 [ext_resource type="Material" path="res://Ground.tres" id="5_m2ykm"]
-[ext_resource type="PackedScene" uid="uid://dsoyb1m4o4ieh" path="res://tank.tscn" id="6"]
+[ext_resource type="Script" path="res://Tank.gd" id="7_3p3kj"]
 [ext_resource type="PackedScene" uid="uid://b4pok7xvls88x" path="res://bullet1.tscn" id="7_yhs48"]
+[ext_resource type="Material" path="res://Tank Material.tres" id="9_oqvfe"]
+[ext_resource type="Script" path="res://circles_of_things.gd" id="10_njqh7"]
+[ext_resource type="PackedScene" uid="uid://dajk1oava0d0c" path="res://dod.tscn" id="11_8cpsu"]
+[ext_resource type="PackedScene" path="res://dod_physics.tscn" id="12_yglxe"]
 
-[sub_resource type="Environment" id="5"]
-background_mode = 1
-background_color = Color(0.862745, 0.862745, 0.862745, 1)
-background_energy_multiplier = 0.33
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 8.03
-ssao_enabled = true
-ssil_enabled = true
+[sub_resource type="CylinderMesh" id="CylinderMesh_2lwri"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qbyen"]
+
+[sub_resource type="Curve" id="Curve_hqwgp"]
+_data = [Vector2(0.0124481, 0.978648), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tfhgs"]
 
 [sub_resource type="WorldBoundaryShape3D" id="18"]
 
 [sub_resource type="PlaneMesh" id="2"]
 
+[sub_resource type="BoxMesh" id="1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2mivd"]
+
+[sub_resource type="BoxMesh" id="6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0fv0"]
+size = Vector3(0.25, 0.25, 2)
+
 [node name="root" type="Node3D"]
+script = ExtResource("1_8q0sy")
 
-[node name="XROrigin3D" type="XROrigin3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.38176, 20.2368)
+script = ExtResource("1_sbaxy")
+speed = 10.0
 
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42811, -6.33751)
+[node name="XROrigin3D" type="XROrigin3D" parent="Player"]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="Player/XROrigin3D"]
+environment = ExtResource("2_jagpw")
+
+[node name="XRController3D" type="XRController3D" parent="Player/XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34876, 0, 0)
+tracker = &"left_hand"
+
+[node name="jet" type="Node3D" parent="Player/XROrigin3D/XRController3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/XROrigin3D/XRController3D/jet"]
+mesh = SubResource("CylinderMesh_2lwri")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Player/XROrigin3D/XRController3D/jet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("SphereMesh_qbyen")
+
+[node name="TrailRenderer" type="Node3D" parent="Player/XROrigin3D/XRController3D/jet"]
+script = ExtResource("4_3h56a")
+width_curve = SubResource("Curve_hqwgp")
+material = ExtResource("5_5qnui")
+
+[node name="XRController3D2" type="XRController3D" parent="Player/XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48393, 0, 0)
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/XROrigin3D/XRController3D2"]
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.213, 5, 44.1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("SphereShape3D_tfhgs")
 
 [node name="SceneSwitcher" parent="." instance=ExtResource("5")]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.54322, -17.5997)
-environment = SubResource("5")
-current = true
-near = 0.01
-far = 10000.0
-script = ExtResource("2_lqmp0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.478572, -0.862125, -0.166461, -0.324868, -0.00227278, 0.945757, -0.815739, 0.506691, -0.278989, 0, 0, 0)
 shadow_enabled = true
 
 [node name="wall" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.3011)
 script = ExtResource("2")
 brickScene = ExtResource("4")
 
 [node name="ground" type="StaticBody3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
 shape = SubResource("18")
@@ -58,16 +106,48 @@ mesh = SubResource("2")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("5_m2ykm")
 
-[node name="tank" parent="." instance=ExtResource("6")]
+[node name="tank" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.021)
 motion_mode = 1
+script = ExtResource("7_3p3kj")
 rotSpeed = 3.0
 fireRate = 2
 bulletPrefab = ExtResource("7_yhs48")
 
-[node name="camTarget" parent="tank" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -10)
+[node name="camTarget" type="Node3D" parent="tank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25501, -2.55356)
 
-[node name="CharacterBody3D2" type="CharacterBody3D" parent="tank"]
+[node name="tankMesh" type="MeshInstance3D" parent="tank"]
+mesh = SubResource("1")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("9_oqvfe")
 
-[editable path="tank"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tank"]
+shape = SubResource("BoxShape3D_2mivd")
+
+[node name="Timer" type="Timer" parent="tank"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="tank"]
+
+[node name="Turret" type="MeshInstance3D" parent="tank/CharacterBody3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 2, 0, 0.625, 1)
+mesh = SubResource("6")
+skeleton = NodePath("../../tankMesh")
+surface_material_override/0 = ExtResource("9_oqvfe")
+
+[node name="bulletSpawn" type="Node3D" parent="tank/CharacterBody3D/Turret"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.679319)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tank/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 1)
+shape = SubResource("BoxShape3D_w0fv0")
+
+[node name="genart1" type="Marker3D" parent="."]
+transform = Transform3D(0.946913, 0.321489, -1.49012e-08, -0.276459, 0.814281, 0.510408, 0.164091, -0.483312, 0.859932, 10.8847, 12.7131, -18.1712)
+script = ExtResource("10_njqh7")
+dod = ExtResource("11_8cpsu")
+
+[node name="genart2" type="Marker3D" parent="."]
+transform = Transform3D(-0.474119, -0.577538, 0.664575, -0.276459, 0.814281, 0.510408, -0.835931, 0.058267, -0.545732, -31.0351, 15.1569, -12.222)
+script = ExtResource("10_njqh7")
+dod = ExtResource("12_yglxe")

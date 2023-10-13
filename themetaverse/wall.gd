@@ -10,7 +10,7 @@ extends Node3D
 @export var brickScene:PackedScene
 
 func _process(delta):
-	print(delta)
+	pass
 
 
 # Called when the node enters the scene tree for the first time.

@@ -22,8 +22,76 @@ Join the class on the World Videophone using the following link:
 
 - [Discord](https://discord.gg/vQEgsb4E)
 
+## Week 3 
+- [Recording](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EeYq8HOEu7JLk1Ye7TCXIcQBQvlp4_UCS78iR-X323Ox6Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=h71mOT)
+
+Lab 
+
+### Learning Outcomes
+- Build a simple agent with perception
+- Develop computation thinking
+- Use trigonometry
+- Use vectors
+- Use the Godot API
+- Practice GDScript
+
+Today you will be making this (click the image for video):
+
+[![YouTube](http://img.youtube.com/vi/kC_W1WBB7uY/0.jpg)](http://www.youtube.com/watch?v=kC_W1WBB7uY)
+
+To start, switch to the master branch of your fork, update your forks to get the starter code and create a new branch for your work today:
+
+```bash
+git checkout master
+git pull upstream master
+git checkout -b mylab4
+```
+
+If you are on a lab computer, you will need to clone your forks. I have updated my version of Unity to be the same as the version installed in the labs, so opening the project should be fast now!
+
+Open the scene lab2 to get the starter scene and code for today. 
+
+What is happening:
+- The red tank has a script attached called AITank that has radius and numWaypoints fields that control the generation of waypoints in a circle around it. These waypoints will be stored in a List. (Like an ArrayList in Java). It draws sphere gizmos so you can see where the waypoints will be.
+- The red tank will move from waypoint to waypoint starting at the 0th one and looping back when it reaches the last waypoint.
+- The red tank prints the messages using the Unity GUI system to indicate:
+    - Whether the blue tank is in front or behind
+    - Whether the front tank is inside a 45 degree FOV
+    - Use the [Godot reference](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html) to figure out what API's to call!
+
+I suggest you work on these tasks:
+
+### Task 1
+
+Add code to OnDrawGizmos in the script AITank.cs to draw gizmos for the waypoints. Use sin and cod to calculate the waypoints. Don't add them to the list here, just draw a sphere gizmos at the position where each waypoint should be
+
+### Task 2
+
+Write code in Awake that populates the waypoints List with the waypoints. Use a for loop, sin, cos and ```transform.TransformPoint```. 
+
+### Task 3
+
+Write code in Update to move the AITank towards the current waypoint. When it comes within 1 unit of the waypoint, you should advance to the next waypoint. You can use transform.Translate, transform.Rotate, transform.position =, transform.rotation = Quaternion.LookRotation. Look up the Unity documentation to see what these API's do
+
+### Task 4
+Write code in Update to print whether the player tank is in front or or behind the AI tank
+
+### Task 5
+Write code in Update to print whether the player tank is inside a 45 degree FOV of the AI tank and whether the player tank is in range of the AI tank. In range means that the player tank is < 10 units away from the AI tank
+
+You will use the following API's in your solution:
+
+```C#
+Quaternion.Slerp
+Quaternion.LookRotation
+Vector3.Normalize
+Vector3.Dot
+Transform.Translate
+```
+
 ## Week 2 - Learning Godot
 - [Trigonometry Problem Set](https://1.cdn.edl.io/IDqRlI8C9dRkoqehbbdHBrcGT6m87gkCQuMKTkp0U7JvHvuG.pdf)
+- [Week 2 Recording](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EYkCd5ALm3BFvsAamhfMrYUBvxxlS0AYrU8oZ23hvNwMVg?e=zhZ2D1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19)
 
 ### Lab 
 

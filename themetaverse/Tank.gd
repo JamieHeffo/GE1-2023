@@ -13,6 +13,7 @@ extends CharacterBody3D
 # var b = "text"
 
 func _drawGizmos():
+
 	pass
 
 # Called when the node enters the scene tree for the first time.
@@ -35,7 +36,7 @@ func _process(delta):
 	
 	# rotate_y(0.1)
 	# rotate_x(0.1)
-	var move = Input.get_axis("move_forward", "move_back")
+	var move = Input.get_axis("move_for", "move_back")
 	if abs(move) > 0:     
 		# set_velocity(- transform.basis.z * speed * move)
 		# move_and_slide()
@@ -45,8 +46,8 @@ func _process(delta):
 		
 	if can_fire and Input.is_action_pressed("ui_select"):
 		var bullet = bulletPrefab.instantiate()
-		$"..".add_child(bullet) 
-		bullet.global_transform.basis = $CharacterBody3D/Turret/bulletSpawn.global_transform.basis
+		$"..".add_child(bullet)
+		bullet.rotation = rotation
 		bullet.global_transform.origin = $CharacterBody3D/Turret/bulletSpawn.global_transform.origin				
 		can_fire = false
 		$Timer.start(1.0 / fireRate)

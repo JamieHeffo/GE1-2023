@@ -23,6 +23,16 @@ albedo_color = Color(0, 0, 1, 1)
 
 [node name="root" type="Node3D"]
 
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="XRController3D" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="XRController3D2" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
 [node name="ground" type="StaticBody3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
@@ -64,5 +74,4 @@ shadow_enabled = true
 [node name="wall" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5.475)
 script = ExtResource("3_rwbqd")
-width = 100
 brickScene = ExtResource("4_rtrnv")
