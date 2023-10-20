@@ -22,6 +22,58 @@ Join the class on the World Videophone using the following link:
 
 - [Discord](https://discord.gg/vQEgsb4E)
 
+## Week 5 - Quaternions & the Metaverse
+- [The Archaic Revival - Read the essay "Virtual Reality and Electronic Highs"](https://archive.org/stream/pdfy-CVSFsGW3fYSFP1wM/McKenna%2C%20Terence%20-%20The%20Archaic%20Revival_djvu.txt)
+- [Slides on quaternions](https://drive.google.com/file/d/11-KFbodaAl9dRSs9ljzdDyTDp1QWWnsZ/view?usp=sharing)
+- [Vectors](https://docs.unity3d.com/Manual/UnderstandingVectorArithmetic.html)
+
+My popular Quaternions in Unity Video:
+
+[![YouTube](http://img.youtube.com/vi/IXySkVFNhdk/0.jpg)](http://www.youtube.com/watch?v=IXySkVFNhdk)
+
+An ode to Quaternions
+
+A quaternion is like a vector, but with a "w"
+
+To construct one, use an axis and an angle, that's what we do
+
+For rotations it must be normal, or otherwise its pure
+
+So we normalise, divide by length, just to be sure
+
+To invert a normal quaternion, we negate x, y and z
+
+Multiply quaternion, vector, inverse quaternion and it rotates don't you see
+
+A rotation of 0 radians is the same as two pi
+
+To convert a quaternion to a matrix, we use the API
+
+So here's a health to old Hamilton, your inventor it would appear
+
+And to imaginary numbers floating in the hypersphere
+
+- Dr Bryan Duggan
+
+## Lab
+
+Today lets make this system:
+
+[![YouTube](http://img.youtube.com/vi/utJ5uUouxuA/0.jpg)](http://www.youtube.com/watch?v=utJ5uUouxuA)
+
+The system is a turret AI system for a game such as a tower defence game. In the video below, the red "tower" will turn to face the players tank and start shooting as soon as the player comes in range. To create this system:
+
+- Make the turret from two cubes and set a spawn point for bullets on the turret
+- Add a TurretController component to the turret. Add fields for rotationSpeed and fireRate (and any others you might need)
+- Use a SphereCollider on the turret and set isTrigger to be true
+- Override OnTriggerEnter and OnTriggerStay to detect the player
+- Use quaternions to rotate the turret
+- Use a co-routine to shoot multiple times per second
+
+
+## Week 4 - Vectors
+- [Recording](https://tudublin-my.sharepoint.com/:v:/r/personal/bryan_duggan_tudublin_ie/Documents/Recordings/Game%20Engines%20Class-20231013_140831-Meeting%20Recording.mp4?csf=1&web=1&e=bm3ggk&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19)
+
 ## Week 3 
 - [Recording](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EeYq8HOEu7JLk1Ye7TCXIcQBQvlp4_UCS78iR-X323Ox6Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=h71mOT)
 

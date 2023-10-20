@@ -8,7 +8,7 @@
 [ext_resource type="Material" path="res://Ground.tres" id="5_ndnvh"]
 [ext_resource type="PackedScene" uid="uid://b4pok7xvls88x" path="res://bullet1.tscn" id="7_hgc24"]
 [ext_resource type="Script" path="res://Tank.gd" id="7_uc3ro"]
-[ext_resource type="Material" path="res://Tank Material.tres" id="9_ejwk7"]
+[ext_resource type="Material" uid="uid://nhu2r5spu63n" path="res://Tank Material.tres" id="9_ejwk7"]
 
 [sub_resource type="WorldBoundaryShape3D" id="18"]
 

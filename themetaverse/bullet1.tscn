@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4pok7xvls88x"]
 
 [ext_resource type="Script" path="res://Bullet.gd" id="1"]
-[ext_resource type="Material" path="res://Tank Material.tres" id="2_tjw4x"]
+[ext_resource type="Material" uid="uid://nhu2r5spu63n" path="res://Tank Material.tres" id="2_tjw4x"]
 [ext_resource type="AudioStream" uid="uid://do6hj4ybomysr" path="res://sounds/Laser_Shoot26.wav" id="5"]
 
 [sub_resource type="BoxShape3D" id="2"]

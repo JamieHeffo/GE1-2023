@@ -1,27 +1,55 @@
-# Games Engines 1 Assignment 2022-2023 
-## The Six Million Dollar Man's Lava Lamp
+# Games Engines 1 Assignment 2023
 
-![Lava Lamp](images/1411580558_The_six_million_dollar_man_s_Lava_Lamp__retro_vintage_bionics_psychedelic__comic_book_style_.png)
+## The Metaverse That Can Be Named (is not the Metaverse)
 
-## The Brief 
+![Img](images/themetaverse.png)
 
-Create an interactive hologram of a cool device from vintage sci-fi, such as Star Trek, the Six Million Dollar Man, Space 1999, 2001: A Space Odyssey, Knight Rider, Thunderbirds, Flash Gordon, Back to the Future etc. etc. Anything from 60's 70's and early 80's. 
+A haiku poem about a one-legged old man in the metaverse:
+
+One-legged old man
+In the virtual world he flies
+A bird with one wing
+
+This haiku poem uses imagery and metaphor to convey the idea of a one-legged old man who is able to transcend his physical limitations in the virtual world of the metaverse. In the Metaverse, anything is possible. We, the Metaversians, understand that we can create anything we can dream or imagine. The aim of this assignment is to create a novel metaverse experience that pushes the boundaries of computer science, culture, art and the human experience. If you ever had a dream of flying, scoring the wining goal, playing in a trad session, flying through space etc. etc. etc. then this project is about creating your dream in the Metaverse and knowing the Godlike power of the Triangle. All hail the Triangle.
+
+![Img](images/download.png.png)
+
+The project can be VR, AR, Mixed Reality, 3D with a game controller or keyboard and mouse. You can use any game engine or technology you like. 
 
 Some ideas:
 
-- The six million dollar mans lava lamp
+- Confession in the Metaverse
+- An immersive artwork
+- A dance/movement experience
+- Baton twirling
+- Juggling
+- Guided Breathwork in VR
+- Somatic dance and bodywork
+- Tai Chi lesson
+- A virtual musical instrument
+- Playing table tennis in VR
+- Scoring the winning goal in the football match every time
+- Hurling in VR using mixed reality
+- A big giant head connected to a large language model
+- Having an icebath in VR
+- An alien
+- Flying over a city like a bird
 - A self playing guitar or piano
-- A volcano
-- A fire place with futuristic effects
+- A volcano or waterfall other natural thing
+- The life of a bee, from the bees first person VR perspective
+- Bring your dead dog back to life in VR
+- A fire place with futuristic colour changing effects
+- A self growing tree
+- Toy soldiers that come to life
+- Give yourself a superpower. Any superpower
 - A harry potter style book or picture that comes to life
-- An alien in a jar
-- AN R2D2 type robot
-- An abstract audio responsive artwork
+- AN programmable robot companion
 - An octopus in a tank
-- A transporter
-- A futuristic kitchen appliance
-- A giant talking head
-- A futuristic machine with lots of lights and moving parts
+- A working Star Trek transporter
+- A futuristic metaverse manipulation device with lots of lights and moving parts
+- Anything procedural, generative or fractal that uses interesting algorithms to generate a VR experience
+- Flying through procedural landscapes
+- A cool sci fi spaceship or device from a movie:
 
 - This thing for holding the Medusan Ambassador from Star Trek:
 
@@ -35,15 +63,9 @@ Some ideas:
 
 [![YouTube](http://img.youtube.com/vi/sTq2Im2YUOk/0.jpg)](https://www.youtube.com/watch?v=sTq2Im2YUOk)
 
-Watch any vintage (pre 1985) sci-fi show  or movie  you will get lots of ideas. The more nostalgic, cool and nerdy the better.
-
-Check out this video of people going crazy (including myself) for the Knight Rider car :-):
-
-- [Knight Rider](https://photos.app.goo.gl/gqpCMHJu5SNbWjj89)
-
 You will manage your project in a github repo, making documented commits as you make progress and include a detailed readme.md in your git repo along with your project. Here is [a template](assignmentreadme.md) you can use for your readme. Also you can use this [gitignore file](.gitignore). Here is [a tutorial on using git](gitlab.md) if you need to brush up!
 
-For Computer Science students this is an individual project. For Game Design students, you can work solo or on a team of up to three people. You can model your device using ProBuilder directly in Unity or use Blender. You should write scripts in C# to interact with the device. We have lots of VR headsets you guys can use to test your holograms on. 
+You can work solo or on a team of up to three people. 
 
 # Due dates:
 - Week 8 - Proposal & git repo - [Submit proposal here](https://forms.office.com/Pages/ResponsePage.aspx?id=yxdjdkjpX06M7Nq8ji_V2ou3qmFXqEdGlmiD1Myl3gNUQlhURzM4MzFWSTdDTDlERFdZTkw2UThQTS4u)
@@ -64,7 +86,7 @@ For Computer Science students this is an individual project. For Game Design stu
 
 | Grade | Indicative Aspects |
 |-------|------------|
-| 1     | Project is deployed to the Quest and has great framerate. It looks amazing with a high level of polish on the visuals. Great use of color and form. The object is fully usable in VR and AR. There is lots of functionality and interactivity - for example buttons to press, levers to turn, colors changing, movement, animation etc. Lots of novelty and nostalgia. Use of visual effects such as particle system, post-processing or custom shaders to enhance visual quality. Has a clear visual style. Has great sound effects. Is very cool indeed. Super cool in fact. Special gold star just like Joe 90. |
+| 1     | Project is deployed to the Quest and has great framerate. It looks amazing with a high level of polish on the visuals. Great use of color and form. The object is fully usable in VR and AR. There is lots of functionality and interactivity - for example buttons to press, levers to turn, colors changing, movement, animation etc. Lots of novelty and nostalgia. Use of visual effects such as particle system, post-processing or custom shaders to enhance visual quality. Has a clear visual style. Has great sound effects. Is very cool indeed. Super cool in fact. Special gold star, like Joe 90! |
 | 2.1 | Maybe deployed to the Quest but has some glitches or runs just on PC not in AR. Looks pretty good with decent but simple self made models made in ProBuilder or Blender. No visual effects. Maybe a particle system. Sound effects grabbed from online sources. Some simple interactivity and button presses. Less coherent visual style. Good novelty value. |
 | 2.2 |  One or two simple models made in ProBuilder or imported from online sources. No interactivity, just an animated visual. Running in the Unity editor. Little or no sound |
 | Pass | Model from online source or primitive that does not do anything |
