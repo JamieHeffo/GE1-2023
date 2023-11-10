@@ -12,12 +12,13 @@ A bird with one wing
 
 This haiku poem uses imagery and metaphor to convey the idea of a one-legged old man who is able to transcend his physical limitations in the virtual world of the metaverse. In the Metaverse, anything is possible. We, the Metaversians, understand that we can create anything we can dream or imagine. The aim of this assignment is to create a novel metaverse experience that pushes the boundaries of computer science, culture, art and the human experience. If you ever had a dream of flying, scoring the wining goal, playing in a trad session, flying through space etc. etc. etc. then this project is about creating your dream in the Metaverse and knowing the Godlike power of the Triangle. All hail the Triangle.
 
-![Img](images/download.png.png)
+![Img](images/triangle.png)
 
 The project can be VR, AR, Mixed Reality, 3D with a game controller or keyboard and mouse. You can use any game engine or technology you like. 
 
 Some ideas:
 
+- Recreate the Kevin St. Snackery in VR
 - Confession in the Metaverse
 - An immersive artwork
 - A dance/movement experience
@@ -43,7 +44,7 @@ Some ideas:
 - Toy soldiers that come to life
 - Give yourself a superpower. Any superpower
 - A harry potter style book or picture that comes to life
-- AN programmable robot companion
+- A programmable robot companion
 - An octopus in a tank
 - A working Star Trek transporter
 - A futuristic metaverse manipulation device with lots of lights and moving parts
@@ -68,7 +69,7 @@ You will manage your project in a github repo, making documented commits as you 
 You can work solo or on a team of up to three people. 
 
 # Due dates:
-- Week 8 - Proposal & git repo - [Submit proposal here](https://forms.office.com/Pages/ResponsePage.aspx?id=yxdjdkjpX06M7Nq8ji_V2ou3qmFXqEdGlmiD1Myl3gNUQlhURzM4MzFWSTdDTDlERFdZTkw2UThQTS4u)
+- Week 8 - Proposal & git repo - [Submit proposal here](https://forms.office.com/Pages/ResponsePage.aspx?id=yxdjdkjpX06M7Nq8ji_V2ou3qmFXqEdGlmiD1Myl3gNURFIzWkc4TTdIV0hEMUVYUFAwM1NWQzFZSS4ugit push)
 - Week 13 - Final submission & in-class, in-person demos
  
  # Weighting
@@ -86,7 +87,7 @@ You can work solo or on a team of up to three people.
 
 | Grade | Indicative Aspects |
 |-------|------------|
-| 1     | Project is deployed to the Quest and has great framerate. It looks amazing with a high level of polish on the visuals. Great use of color and form. The object is fully usable in VR and AR. There is lots of functionality and interactivity - for example buttons to press, levers to turn, colors changing, movement, animation etc. Lots of novelty and nostalgia. Use of visual effects such as particle system, post-processing or custom shaders to enhance visual quality. Has a clear visual style. Has great sound effects. Is very cool indeed. Super cool in fact. Special gold star, like Joe 90! |
+| 1     | Project is deployed to the Quest and has great framerate. It looks amazing with a high level of polish on the visuals. Great use of color and form. The object is fully usable in VR and AR. There is lots of functionality and interactivity - for example buttons to press, levers to turn, colors changing, movement, animation etc. Lots of novelty and originality. Use of visual effects such as particle system, post-processing or custom shaders to enhance visual quality. Has a clear visual style. Has great sound effects. Is very cool indeed. Super cool in fact. Special gold star, like Joe 90! |
 | 2.1 | Maybe deployed to the Quest but has some glitches or runs just on PC not in AR. Looks pretty good with decent but simple self made models made in ProBuilder or Blender. No visual effects. Maybe a particle system. Sound effects grabbed from online sources. Some simple interactivity and button presses. Less coherent visual style. Good novelty value. |
 | 2.2 |  One or two simple models made in ProBuilder or imported from online sources. No interactivity, just an animated visual. Running in the Unity editor. Little or no sound |
 | Pass | Model from online source or primitive that does not do anything |
@@ -117,10 +118,10 @@ Examples from previous years:
 - [https://youtube.com/playlist?list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X](2019-2020)
 - [https://youtube.com/playlist?list=PL1n0B6z4e_E5qaYwUOlJ63XI2OR9ty7Bs](2018-2019)
 
-The [interm submission](https://forms.office.com/Pages/ResponsePage.aspx?id=yxdjdkjpX06M7Nq8ji_V2ou3qmFXqEdGlmiD1Myl3gNUQlhURzM4MzFWSTdDTDlERFdZTkw2UThQTS4u) is ungraded and you will get the full 10% if you include the following:
+The interm submission is ungraded and you will get the full 10% if you include the following:
 
-- A git repo with a Unity project. You can [fork this repo](https://github.com/skooter500/GE1-2022-2023/).
+- A git repo with a Godot (or if you want to use an INFEEEEEERIOR  engine - its ok) project
 - A project scene
-- A readme file following this template
+- A readme file following [this template](assignmentreadme.md)
 - A cool idea documented in the readme file
 - A few sentences about how you plan to implement it 

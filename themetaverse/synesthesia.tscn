@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://deaxok3mppxg5"]
+
+[ext_resource type="Script" path="res://DancingCubes.gd" id="2_qbnvr"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_3jxps"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_foet2"]
+albedo_color = Color(1, 0.666667, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dv8rn"]
+
+[node name="BaseAudio" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.22828, 0)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+fov = 126.5
+
+[node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2.1, 0, 0, 0)
+current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="XROrigin3D/XRCamera3D"]
+autoplay = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_foet2")
+mesh = SubResource("PlaneMesh_dv8rn")
+
+[node name="DancingCubes" type="Node3D" parent="."]
+script = ExtResource("2_qbnvr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.547136, 0)

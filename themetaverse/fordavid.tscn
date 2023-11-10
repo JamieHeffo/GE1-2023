@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgf15xd1s7hek"]
+
+[ext_resource type="Script" path="res://partical.gd" id="1_51iy8"]
+
+[sub_resource type="Curve" id="Curve_1ymyx"]
+max_value = 1.5
+_data = [Vector2(0.0194805, 0.736842), 0.0, 0.0, 0, 0, Vector2(0.487013, 1.5), 0.0, 0.0, 0, 0, Vector2(1, 0.221053), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tkh0g"]
+curve = SubResource("Curve_1ymyx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ucr8f"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3(0, -1, 0)
+spread = 57.13
+flatness = 1.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+tangential_accel_min = -19.1
+tangential_accel_max = 9.18
+scale_curve = SubResource("CurveTexture_tkh0g")
+color = Color(1, 0, 0.113725, 1)
+hue_variation_max = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ml6n6"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_1rmak"]
+material = SubResource("StandardMaterial3D_ml6n6")
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72611, 13.1469, 0.605343)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_ucr8f")
+draw_pass_1 = SubResource("BoxMesh_1rmak")
+script = ExtResource("1_51iy8")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://xk0towgq03xn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pup8j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogghb"]
+
+[node name="DancingCube" type="Node3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_pup8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_ogghb")

@@ -6,6 +6,7 @@ extends Node3D
 # var b = "text"
 
 @export var sensitivity = 0.1
+@export var score = 0
 @export var speed:float = 1.0
 
 var controlling = true
@@ -50,3 +51,8 @@ func _process(delta):
 		var upanddown = Input.get_axis("move_up", "move_down")
 		if abs(upanddown) > 0:     
 			global_translate(- global_transform.basis.y * speed * upanddown * mult * delta)
+
+
+func _on_area_3d_area_entered(area):
+	score += 1
+	print("Score: ", score)

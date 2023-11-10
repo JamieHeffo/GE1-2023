@@ -38,7 +38,6 @@
 | Timer | Node that send signals on an interval |
 | Camera3D | |
 
-
 ## Transforms
 
 | To do | Use |
@@ -48,6 +47,26 @@
 | Rotating | rotate, rotate_x, rotate_y, rotate_z |
 | Setting the rotation | rotation = Vector3(x, y, z). This is in radians. transform.basis = transform.basis.rotated(), global_transform.basis = global_transform.basis.rotated(), or Basis (from) - where from is a quaternion | 
 | Setting the scale | scale, transform.basis.scale, global_transform.basis.scale n| 
+
+## Particle Systems
+
+| Property | Meaning |
+|--------|-------|
+| ProcessMaterial | A shader that will process the particles. This is where the particle system is configured  |
+| DrawPass | Draws one Particle. Has a material |
+| Amount| How many particles in the system |
+| Emission Shapes | |
+| Lifetime | How long each one lives for |
+| One shot |  Just fire once and stop|
+| Preprocess | Wind the particle system forward this amount before starting |
+| Explosiveness | Explodes them all out semi randomly |
+| Randomness | How randomly they emit |
+
+### Process Material
+
+| Lifetime randomness | |
+| Emission Shape |  |
+| | |
 
 ## Referencing other nodes
 

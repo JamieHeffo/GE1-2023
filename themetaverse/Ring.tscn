@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://b74fg0fjqei8t"]
+
+[ext_resource type="Script" path="res://ringTrigger.gd" id="1_lb355"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_hn5gy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0v05h"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lrw3e"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_v4wy2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqsyh"]
+transparency = 1
+blend_mode = 1
+
+[node name="RingOuter" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(3.82137e-15, 8.74228e-08, 2, 2, -8.74228e-08, 0, 8.74228e-08, 2, -8.74228e-08, 0, 0, 0)
+disable_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("TorusMesh_hn5gy")
+surface_material_override/0 = SubResource("StandardMaterial3D_0v05h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_lrw3e")
+
+[node name="RingInner" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RingInner"]
+transform = Transform3D(3.82137e-15, 4.37114e-08, 2, 2, -4.37114e-08, 0, 8.74228e-08, 1, -8.74228e-08, 0, 0, 0)
+script = ExtResource("1_lb355")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RingInner/StaticBody3D"]
+visible = false
+mesh = SubResource("SphereMesh_v4wy2")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_yqsyh")
+
+[node name="Area3D" type="Area3D" parent="RingInner/StaticBody3D"]
+transform = Transform3D(1, -1.77636e-15, 0, 7.10543e-15, 1, -7.10543e-15, 0, 1.77636e-15, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RingInner/StaticBody3D/Area3D"]
+transform = Transform3D(150, 0, -2.71051e-20, 0, 150, 0, 0, 0, 150, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_lrw3e")

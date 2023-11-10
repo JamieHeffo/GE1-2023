@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://qaf6xe6j3puc"]
+
+[ext_resource type="Script" path="res://SpineAnimator.gd" id="1_1ww4t"]
+[ext_resource type="Script" path="res://head.gd" id="2_2fpom"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3o2sd"]
+
+[node name="root" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5117, 10.0334, -1.78878)
+current = true
+
+[node name="SpineAnimator" type="Node" parent="."]
+script = ExtResource("1_1ww4t")
+bonePaths = [NodePath("../head"), NodePath("../body"), NodePath("../body2"), NodePath("../body3")]
+
+[node name="head" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_3o2sd")
+script = ExtResource("2_2fpom")
+
+[node name="body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.17814)
+mesh = SubResource("BoxMesh_3o2sd")
+
+[node name="body2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4034)
+mesh = SubResource("BoxMesh_3o2sd")
+
+[node name="body3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.62343)
+mesh = SubResource("BoxMesh_3o2sd")

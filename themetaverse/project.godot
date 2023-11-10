@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Themetaverse"
-run/main_scene="res://tankgame1.tscn"
+run/main_scene="res://GroupOftanksGame.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,10 @@ XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd
 
 window/size/viewport_width=1024
 window/size/viewport_height=768
+
+[dotnet]
+
+project/assembly_name="Themetaverse"
 
 [editor_plugins]
 
@@ -56,18 +60,25 @@ move_right={
 }
 move_up={
 "deadzone": 0.5,
-"events": []
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":1.0,"script":null)
+]
 }
 move_down={
 "deadzone": 0.5,
-"events": []
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":4,"axis_value":1.0,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":12,"pressure":0.0,"pressed":true,"script":null)
+]
 }
+
+[physics]
+
+3d/default_gravity=0.1
 
 [rendering]
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
-anti_aliasing/quality/msaa_3d=2
 
 [xr]
 
